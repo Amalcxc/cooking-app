@@ -3,7 +3,8 @@ class IdeasController < ApplicationController
 
   # GET /ideas or /ideas.json
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.order("created_at DESC")
+    @idea = Idea.new
   end
 
   # GET /ideas/1 or /ideas/1.json
