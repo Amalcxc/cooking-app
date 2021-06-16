@@ -1,8 +1,8 @@
-<div>
+<div class="d-flex fixed-top fixed-bottom"> 
 	<nav class="panel">
 		<p class="panel-heading">Profile</p>
 		<div class="panel-block">
-			<article class="media ">
+			<article class="media">
 				<div class="media-left">
 					<figure class="image is-64x64">
 						<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
@@ -46,7 +46,7 @@
 			<%end%>
 		</div>
 		<div class="panel-block">
-		  <%= link_to root_path, class: "navbar-item" do %>
+		  <%= link_to user_path(current_user), class: "navbar-item" do %>
 		  <p class="heading">Profile</p>
 			<%end%>
 		</div>

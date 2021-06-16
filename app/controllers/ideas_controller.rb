@@ -6,6 +6,7 @@ class IdeasController < ApplicationController
   def index
     @ideas = Idea.all.order("created_at DESC")
     @idea = Idea.new
+    @users = User.all.order("created_at DESC")
   end
 
   # GET /ideas/1 or /ideas/1.json
