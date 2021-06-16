@@ -2,56 +2,31 @@
 	<nav class="panel">
 		<p class="panel-heading">Who to Follow</p>
 	
-	<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Amal Hersi</strong>
-						<small>@amalhersi</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
+
+ <% @users.each do | user | %>
 		<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>John s</strong>
-						<small>@johns</small>
-					</p>
-				</div>
-			</div>
+			<article class="media">
+			<% unless user == current_user %>
+				
+					<div class="media-left">
+						<figure class="image is-32x32">
+							<img src="https://bulma.io/images/placeholders/64x64.png">
+						</figure>
+					</div>
+					<div class="media-content">
+						<div class="content">
+							<p>
+									<strong><%= user.name%></strong>
+									<small><%= user.username%></small>		
+									<%= link_to 'Follow', user_relationships_path(user), method: :post, class: "button is-info" unless @rel.present?%>
+									<%= link_to 'unfollow', relationship_path(@rel.id), method: :delete, class: "button is-danger" if @rel.present?%>  
+							</p>
+						</div>
+					</div>
+					
+		  <%end%> 
 		</article>
 	</div>
-		<div class="panel-block">
-		<article class="media">
-			<div class="media-left">
-				<figure class="image is-32x32">
-					<img src="https://bulma.io/images/placeholders/64x64.png">
-				</figure>
-			</div>
-			<div class="media-content">
-				<div class="content">
-					<p>
-						<strong>Aaaa</strong>
-						<small>@aaaaa</small>
-					</p>
-				</div>
-			</div>
-		</article>
-	</div>
-	</nav>
+ <%end%>
+ </nav>
 </div>

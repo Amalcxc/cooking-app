@@ -1,8 +1,8 @@
-<div >
+<div>
 	<nav class="panel">
 		<p class="panel-heading">Profile</p>
 		<div class="panel-block">
-			<article class="media">
+			<article class="media ">
 				<div class="media-left">
 					<figure class="image is-64x64">
 						<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
@@ -29,16 +29,26 @@
 				<div class="level-item has-centered-text">
 					<div>
 						<p class="heading">Following</p>
-						<p class="title is-6">123</p>
+						<p class="title is-6"><%= current_user.following.count%> </p>
 					</div>
 				</div>
 					<div class="level-item has-centered-text">
 					<div>
 						<p class="heading">Followers</p>
-						<p class="title is-6">465K</p>
+						<p class="title is-6"><%= current_user.followers.count%><p>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="panel-block">
+		  <%= link_to root_path, class: "navbar-item" do %>
+		  <p class="heading">Home</p>
+			<%end%>
+		</div>
+		<div class="panel-block">
+		  <%= link_to root_path, class: "navbar-item" do %>
+		  <p class="heading">Profile</p>
+			<%end%>
 		</div>
 	</nav>
 </div>
