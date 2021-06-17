@@ -9,14 +9,18 @@
 					</div>
 					<div class="media-content">
 						<div class="content">
+							
 							<p>
 								<strong><%= @user.name %></strong><br />
 								<small><%= @user.username %></small>
+								<% unless @user == current_user %>
 								<div>
+								
 								<%= link_to 'Follow', user_relationships_path(@user), method: :post, class: "button is-info" unless @rel.present?%>
 								<%= link_to 'unfollow', relationship_path(@rel.id), method: :delete, class: "button is-danger" if @rel.present? %>
 								</div>
 							</p>
+							<%end%>
 						</div>
 					</div>
 	</article>
@@ -50,7 +54,6 @@
 						<div class="content">
 						  
 							<p>
-							
                 <%= who_to_follow_list(user) %> 
 							 <div>
 								<%= link_to 'Follow', user_relationships_path(user), method: :post, class: "button is-info" unless @rel.present?%>
