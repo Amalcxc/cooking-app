@@ -1,0 +1,27 @@
+<div class="column p-0 is-one-third ">
+	<nav class="panel ">
+		<p class="panel-heading">Who to Follow</p>
+	 
+
+ <% @users.each do | user | %>
+		<div class="panel-block">
+			<article class="media">
+			<% unless user == current_user %>	
+					<div class="media-content">
+						<div class="content">
+							<p>
+                <%= who_to_follow_list(user) %> <br/>
+								<%= link_to 'Follow', user_relationships_path(user), method: :post, class: "button is-info" unless @rel.present?%>
+								<%= link_to 'unfollow', relationship_path(@rel.id), method: :delete, class: "button is-danger" if @rel.present? %>
+							</p>
+						</div>
+					</div>
+			 </article>
+					
+		  <%end%> 
+		</article>
+	</div>
+ <%end%>
+ </nav>
+</div>
+
