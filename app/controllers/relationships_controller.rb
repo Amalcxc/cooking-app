@@ -8,6 +8,8 @@ class RelationshipsController < ApplicationController
 
   end
 
+
+
   def destroy
     @rel = Relationship.find(params[:id])
     @rel.destroy
