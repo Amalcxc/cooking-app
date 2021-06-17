@@ -7,15 +7,15 @@
 							<%= gravatar_image_tag(@user.email, size: 64, alt: @user.name) %>
 						</figure>
 					</div>
-					<div class="media-content">
+					<div class="media-content position-relative">
 						<div class="content">
 							
 							<p>
 								<strong><%= @user.name %></strong><br />
 								<small><%= @user.username %></small>
 								<% unless @user == current_user %>
-								<div>
-								
+								<div class="button1">
+
 								<%= link_to 'Follow', user_relationships_path(@user), method: :post, class: "button is-info" unless @rel.present?%>
 								<%= link_to 'unfollow', relationship_path(@rel.id), method: :delete, class: "button is-danger" if @rel.present? %>
 								</div>
@@ -47,7 +47,7 @@
 			</div>
 		</div>
  <% @users.each do | user | %>
-		<div class="panel">
+		<div class="panel-block">
 			<article class="media">
 			<% unless user == current_user %>	
 					<div class="media-content">
@@ -55,10 +55,6 @@
 						  
 							<p>
                 <%= who_to_follow_list(user) %> 
-							 <div>
-								<%= link_to 'Follow', user_relationships_path(user), method: :post, class: "button is-info" unless @rel.present?%>
-								<%= link_to 'unfollow', relationship_path(@rel.id), method: :delete, class: "button is-danger" if @rel.present? %>
-								</div>
 							</p>
 							
 						</div>

@@ -26,3 +26,30 @@
  .notification:not(:last-child){
    margin-bottom: 0;
  }
+
+ .bg-color {
+   background-color: #132435;
+ }
+
+ .bg-color2 {
+   background-color: rgb(248, 242, 242);
+ }
+
+ .box-length {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  
+ }
+
+ .button1 {
+  position: absolute;
+  right: 2%;
+  bottom: 27%;
+ }
+
+ .img-cover {
+  height: 223px;
+  width: 100%;
+ }
