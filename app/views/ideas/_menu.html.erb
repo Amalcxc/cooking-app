@@ -1,0 +1,55 @@
+<div class="d-flex "> 
+	<nav class="panel text-white bg-color">
+		<p class="panel-heading text-white bg-color">Profile</p>
+		<div class="panel-block">
+			<article class="media text-white">
+				<div class="media-left">
+					<figure class="image is-64x64">
+						<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+					</figure>
+				</div>
+				<div class="media-content text-white">
+					<div class="content">
+						<p class="text-white">
+							<strong class="text-white"><%= current_user.name %></strong><br />
+							<small><%= current_user.username %></small>
+						</p>
+					</div>
+				</div>
+			</article>
+		</div>
+		<div class="panel-block text-white">
+			<div class="level is-mobile">
+				<div class="level-item has-centered-text text-white">
+					<div>
+						<p class="heading">Ideas</p>
+						<p class="title is-6 text-white"><%= current_user.ideas.count %></p>
+					</div>
+				</div>
+				<div class="level-item has-centered-text text-white">
+					<div>
+						<p class="heading text-white">Following</p>
+						<p class="title is-6 text-white"><%= current_user.following.count%> </p>
+					</div>
+				</div>
+					<div class="level-item has-centered-text text-white">
+					<div>
+						<p class="heading text-white">Followers</p>
+						<p class="title is-6 text-white"><%= current_user.followers.count%><p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="panel-block ">
+		  <%= link_to root_path, class: "navbar-item" do %>
+		  <p class="heading text-white">Home</p>
+			<%end%>
+		</div>
+		<div class="panel-block ">
+		  <%= link_to user_path(current_user), class: "navbar-item" do %>
+		  <p class="heading text-white">Profile</p>
+			<%end%>
+		</div>
+	</nav>
+</div>
+

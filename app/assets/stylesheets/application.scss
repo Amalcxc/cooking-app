@@ -1,0 +1,39 @@
+/* some comment */
+@import 'bulma';
+
+.image {
+  border-radius: 50%;
+
+  img {
+    border-radius: 50%;
+  }
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.bg-color {
+  background-color: #132435;
+}
+
+.bg-color2 {
+  background-color: rgb(248, 242, 242);
+}
+
+.button1 {
+  position: absolute;
+  right: 2%;
+  bottom: 27%;
+}
+
+.img-cover {
+  height: 223px;
+  width: 100%;
+}
+
+html,
+body,
+.row {
+  min-height: 100vh;
+}
