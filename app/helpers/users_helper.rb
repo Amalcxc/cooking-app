@@ -12,7 +12,7 @@ module UsersHelper
       res << "<div class='d-flex'>"
       res << follower_picture.to_s
       res << "<div class='d-flex flex-column my-auto'>"
-      res << "<p>#{follower.name}</p>"
+      res << "<p class='p-2'>#{follower.name}</p>"
       res << '</div>'
       res << '</div>'
     end
