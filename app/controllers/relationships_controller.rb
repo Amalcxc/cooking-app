@@ -5,16 +5,11 @@ class RelationshipsController < ApplicationController
 
     @rel.save
     redirect_to user_path(other_user)
-
   end
-
-
 
   def destroy
     @rel = Relationship.find(params[:id])
     @rel.destroy
     redirect_to user_path(@rel.followed_id)
-  end 
-
-  
+  end
 end

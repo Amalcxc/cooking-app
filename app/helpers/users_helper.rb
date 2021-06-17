@@ -6,7 +6,7 @@ module UsersHelper
 
     unless followers_list.include?(follower.id) || current_user.id == follower.id
       follower_picture = link_to follower do
-       gravatar_image_tag(@user.email, size: 64, alt: current_user.name)
+        gravatar_image_tag(@user.email, size: 64, alt: current_user.name)
       end
 
       res << "<div class='d-flex'>"

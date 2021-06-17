@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before :each do
-    User.create(name: 'NewUser', username: "Newuser", email: 'user@example.com', password: '1234567', password_confirmation: '1234567')
+    User.create(name: 'NewUser', username: 'Newuser', email: 'user@example.com', password: '1234567',
+                password_confirmation: '1234567')
   end
 
   it 'checks the user exists' do
@@ -30,7 +31,4 @@ RSpec.describe User, type: :model do
     t = User.reflect_on_association(:ideas)
     expect(t.macro).to eq(:has_many)
   end
-
-  
-
 end
