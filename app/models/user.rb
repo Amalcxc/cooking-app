@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  validates :username, :name, presence: true
+  validates :username, uniqueness: true
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -7,4 +9,7 @@ class User < ApplicationRecord
   has_many :ideas
   has_many :followers, foreign_key: 'followed_id', class_name: 'Relationship'
   has_many :following, foreign_key: 'follower_id', class_name: 'Relationship'
+
+  mount_uploader :photo, ImageUploader
+  mount_uploader :cover, ImageUploader
 end

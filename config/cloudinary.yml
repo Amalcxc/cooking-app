@@ -1,0 +1,12 @@
+development:
+  cloud_name: 'exampleone'
+  api_key: '381792152184524'
+  api_secret: 'S9C58NiMsMdMOZlEy95uG6oU614'
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: 'exampleone'
+  api_key: '381792152184524'
+  api_secret: 'S9C58NiMsMdMOZlEy95uG6oU614'
+  enhance_image_tag: true
+  static_file_support: true

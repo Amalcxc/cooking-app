@@ -3,8 +3,8 @@
 	<article class="media box">
 		<figure class="media-left">
 			<p class="image is-64x64">
-        <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
-				<%# <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %> 
+        <%= profile_picture(current_user) %>
+			
 			</p>
 		</figure>
 		<div class="media-content">
@@ -12,12 +12,12 @@
 		</div>
 	</article>
  
-<% @ideas.each do | idea | %>
+<%@ideas.includes(:user).each do |idea|%>
   <div class="box">
    <article class="media">
      <div class="media-left">
        <figure class="image is-64x64">
-         <%= gravatar_image_tag(idea.user.email, size: 64, alt: idea.user.name) %>
+         <%= profile_picture(idea.user) %>
        </figure>
      </div>
 
@@ -27,6 +27,7 @@
   			<small><%= idea.user.username %></small><br/>
         <p><%= idea.idea %></p>
        </div>
+		 <% if current_user == idea.user%>
        <nav class="level">
   				<div class="level-left is-mobile">
   					<%= link_to idea, class: "level-item" do %>
@@ -40,6 +41,7 @@
   					<% end %>
   				</div>
   			</nav>
+			<%end%>	
      </div>
    </article>
   </div>

@@ -1,15 +1,23 @@
 <div class="column p-0 is-one-third ">
 	<nav class="panel ">
 		<p class="panel-heading">Who to Follow</p>
+
 	<article class="media m-5">
 					<div class="media-left">
 						<figure class="image is-64x64">
-							<%= gravatar_image_tag(@user.email, size: 64, alt: @user.name) %>
+							<%= user_image(@user) %>
 						</figure>
 					</div>
 					<div class="media-content position-relative">
 						<div class="content">
-							
+							<% if current_user == @user %>  
+								<%= form_for(:user, method: :put, multipart: true) do |f| %>
+								<%= f.label :photo, "Change Photo", class: "sky-blue" %>
+								<%= f.hidden_field :photo_cache %>
+								<%= f.file_field :photo, { onchange: 'this.form.submit();' } %>
+              <% end %>
+            <% end %>
+				
 							<p>
 								<strong><%= @user.name %></strong><br />
 								<small><%= @user.username %></small>
@@ -45,23 +53,28 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
+		<div class="panel-block">
+		  <h4>other users</h4>
+		</div>
+		
  <% @users.each do | user | %>
+    
 		<div class="panel-block">
 			<article class="media">
-			<% unless user == current_user %>	
+			   
 					<div class="media-content">
 						<div class="content">
 						  
 							<p>
+							  
                 <%= who_to_follow_list(user) %> 
 							</p>
 							
 						</div>
 					</div>
 			 </article>
-					
-		  <%end%> 
 		</article>
 	</div>
  <%end%>
