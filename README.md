@@ -28,9 +28,9 @@
 
 ### Prerequisites
 
-Ruby: 2.6.3
-Rails: 5.2.3
-Postgres: >=9.5
+- Ruby: 2.7.0
+- Rails: 5.2.6
+- Postgres
 
 ### Setup
 
@@ -80,7 +80,6 @@ Postgres: >=9.5
 
 - Contributions, issues and feature requests are welcome!
 
-- Feel free to check the [issues page](issues/).
 
 ## Show your support
 
