@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
 
   it 'It fails if wrong parameters are passed' do
     user = User.create(name: '', username: '', email: '', password: '', password_confirmation: '')
-    expect(user.errors.full_messages).to eq(["Email can't be blank", "Password can't be blank"])
+    expect(user.errors.full_messages).to eq(["Username can't be blank", "Name can't be blank", "Email can't be blank", "Password can't be blank"])
   end
 
   it 'should have many ideas' do
