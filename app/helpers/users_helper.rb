@@ -7,7 +7,6 @@ module UsersHelper
     unless followers_list.include?(follower.id) || current_user.id == follower.id
       follower_picture = link_to follower do
         follow_picture(follower)
-        # gravatar_image_tag(@user.email, size: 64, alt: current_user.name)
       end
 
       res << "<div class='d-flex'>"
@@ -22,7 +21,7 @@ module UsersHelper
 
   def profile_picture(user)
     if user.photo.file.nil?
-      img = gravatar_image_tag(user.email, size: 64, alt: current_user.name)
+      gravatar_image_tag(user.email, size: 64, alt: current_user.name)
     else
       img = Cloudinary::Utils.cloudinary_url(user.photo.filename, fetch_format: 'auto', quality: 'auto')
       "<img src='#{img}' alt='' class='profile-picture'>".html_safe
@@ -41,7 +40,7 @@ module UsersHelper
 
   def user_image(user)
     if user.photo.file.nil?
-      img = gravatar_image_tag(user.email, size: 64, alt: current_user.name)
+      gravatar_image_tag(user.email, size: 64, alt: current_user.name)
     else
       img = Cloudinary::Utils.cloudinary_url(user.photo.filename, fetch_format: 'auto', quality: 'auto')
       "<img src='#{img}' alt='' class='user-image'>".html_safe
@@ -50,7 +49,7 @@ module UsersHelper
 
   def follow_picture(user)
     if user.photo.file.nil?
-      img = gravatar_image_tag(user.email, size: 64, alt: current_user.name)
+      gravatar_image_tag(user.email, size: 64, alt: current_user.name)
     else
       img = Cloudinary::Utils.cloudinary_url(user.photo.filename, fetch_format: 'auto', quality: 'auto')
       "<img src='#{img}' alt='' class='follow-picture image is-64x64'>".html_safe
