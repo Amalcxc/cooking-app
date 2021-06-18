@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @idea = Idea.new
     @posts = @user.ideas
   end
-  
+
   def update
     respond_to do |format|
       if @user.update(user_params)
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       end
     end
   end
- 
+
   def set_user
     @user = User.find(params[:id])
   end

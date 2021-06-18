@@ -7,7 +7,7 @@ module UsersHelper
     unless followers_list.include?(follower.id) || current_user.id == follower.id
       follower_picture = link_to follower do
         follow_picture(follower)
-        #gravatar_image_tag(@user.email, size: 64, alt: current_user.name)
+        # gravatar_image_tag(@user.email, size: 64, alt: current_user.name)
       end
 
       res << "<div class='d-flex'>"
@@ -28,8 +28,6 @@ module UsersHelper
       "<img src='#{img}' alt='' class='profile-picture'>".html_safe
     end
   end
-
- 
 
   def cover_image(user)
     if user.cover.file.nil?
