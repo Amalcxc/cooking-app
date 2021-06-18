@@ -12,6 +12,4 @@ class RelationshipsController < ApplicationController
     @rel.destroy
     redirect_to user_path(@rel.followed_id)
   end
-
-  
 end

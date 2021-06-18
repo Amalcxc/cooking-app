@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  def index
-  end
+  def index; end
+
   def show
     @user = User.find(params[:id])
     @users = User.all.order('created_at DESC')
@@ -8,5 +8,5 @@ class UsersController < ApplicationController
     @ideas = Idea.all.order('created_at DESC')
     @idea = Idea.new
     @posts = @user.ideas
-  end 
+  end
 end
