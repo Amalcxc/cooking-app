@@ -45,24 +45,28 @@
 					</div>
 				</div>
 			</div>
+			
 		</div>
+		<div class="panel-block">
+		  <h4>other users</h4>
+		</div>
+		
  <% @users.each do | user | %>
+    
 		<div class="panel-block">
 			<article class="media">
-			<% unless user == current_user %>	
+			   
 					<div class="media-content">
-					  <h4> Other Users to Follow </h4>
 						<div class="content">
 						  
 							<p>
+							  
                 <%= who_to_follow_list(user) %> 
 							</p>
 							
 						</div>
 					</div>
 			 </article>
-					
-		  <%end%> 
 		</article>
 	</div>
  <%end%>
