@@ -8,5 +8,5 @@ class UsersController < ApplicationController
     @ideas = Idea.all.order('created_at DESC')
     @idea = Idea.new
     @posts = @user.ideas
-  end
+  end 
 end

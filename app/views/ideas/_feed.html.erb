@@ -27,6 +27,7 @@
   			<small><%= idea.user.username %></small><br/>
         <p><%= idea.idea %></p>
        </div>
+		 <% if current_user == idea.user%>
        <nav class="level">
   				<div class="level-left is-mobile">
   					<%= link_to idea, class: "level-item" do %>
@@ -40,6 +41,7 @@
   					<% end %>
   				</div>
   			</nav>
+			<%end%>	
      </div>
    </article>
   </div>
