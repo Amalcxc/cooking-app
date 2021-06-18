@@ -1,6 +1,9 @@
-# 
+# cooking App 
 
-> 
+> this is a website that people who love to cook can exchanges cooking ides and resipes and follow each other for more information about cooking.
+
+![screenshot](Screen.png)
+![screenshot](ScreenS.png)
 
 
 ## Built With
@@ -9,11 +12,7 @@
 - Ruby on Rails v5.2.4
 
 ## Live Demo
-[Live Demo]()
-
-## Getting Started
-
-To get a local copy up and running follow these simple example steps.
+[Live Demo](https://evening-ridge-66508.herokuapp.com/users/sign_in)
 
 ### Prerequisites
 
@@ -24,7 +23,7 @@ Postgres: >=9.5
 ### Setup
   - Use your github account and your terminal to clone this repository to your computer:
 
-  - git clone https://github.com/Amalcxc/ror-social-scaffold.git
+  - git clone https://github.com/Amalcxc/cooking-app.git
 
   - Go to the cloned directory: cd ror-social-scaffold
 
@@ -40,13 +39,10 @@ Postgres: >=9.5
 
 Start server with: Run rails s and go to http://localhost:3000/ in your browser.
 
-### Run tests
-
-> Tests will be added by Microverse students. There are no tests for initial features in order to make sure that students write all tests from scratch.
 
 ### Deployment
 
-TB
+- Heroku
 
 ## Authors
 
