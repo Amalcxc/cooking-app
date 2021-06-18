@@ -4,11 +4,11 @@
 		<div class="panel-block">
 			<article class="media text-white">
 				<div class="media-left">
-					<figure class="image is-64x64">
-						<%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+					<figure class="image is-64x64 p-2 ">
+						<%= profile_picture(current_user) %>
 					</figure>
 				</div>
-				<div class="media-content text-white">
+				<div class="media-content text-white m-2">
 					<div class="content">
 						<p class="text-white">
 							<strong class="text-white"><%= current_user.name %></strong><br />
@@ -18,11 +18,12 @@
 				</div>
 			</article>
 		</div>
-		<div class="panel-block text-white">
+
+		<div class="panel-block text-white m-2">
 			<div class="level is-mobile">
 				<div class="level-item has-centered-text text-white">
 					<div>
-						<p class="heading">Ideas</p>
+						<p class="heading ">Ideas</p>
 						<p class="title is-6 text-white"><%= current_user.ideas.count %></p>
 					</div>
 				</div>

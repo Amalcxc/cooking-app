@@ -3,7 +3,7 @@
 	<article class="media box">
 		<figure class="media-left">
 			<p class="image is-64x64">
-        <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+        <%= profile_picture(current_user) %>
 			
 			</p>
 		</figure>
@@ -17,7 +17,7 @@
    <article class="media">
      <div class="media-left">
        <figure class="image is-64x64">
-         <%= gravatar_image_tag(idea.user.email, size: 64, alt: idea.user.name) %>
+         <%= profile_picture(idea.user) %>
        </figure>
      </div>
 
