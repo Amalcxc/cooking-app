@@ -2,9 +2,7 @@
   <img src="https://i2.wp.com/diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png?ssl=1" class="img-cover">
 
  
-
-
-<% @posts.each do | idea | %>
+<%@posts.includes(:user).each do |idea|%>
   <div class="box">
    <article class="media">
      <div class="media-left">

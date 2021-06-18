@@ -12,7 +12,7 @@
 		</div>
 	</article>
  
-<% @ideas.each do | idea | %>
+<%@ideas.includes(:user).each do |idea|%>
   <div class="box">
    <article class="media">
      <div class="media-left">
